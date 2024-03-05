@@ -11,15 +11,15 @@ const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to database."));
 //MIDDLEWARE
-
+app.use(express.json());
 //ROUTES
-// const userRoutes = require("./routes/users");
-// app.use("/users", userRouter);
+const userRouter = require("./routes/users");
+app.use("/users", userRouter);
 
-// const postsRoutes = require("./routes/posts");
+// const postsRouter = require("./routes/posts");
 // app.use("/posts", postRoutes);
 
-// const commentsRoutes = require("./routes/comments");
+// const commentsRouter = require("./routes/comments");
 // app.use("/comments", commentRoutes);
 //ERRORS
 
