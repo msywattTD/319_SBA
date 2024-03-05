@@ -102,4 +102,4 @@ const allPosts = [
     textContent: "Magical starry night camping under the open sky.",
   },
 ];
-module.exports = mongoose.model(allPosts);
+module.exports = allPosts;

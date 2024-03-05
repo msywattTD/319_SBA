@@ -2,6 +2,14 @@ const express = require("express");
 const dotenv = require("dotenv").config();
 const mongoose = require("mongoose");
 
+const User = require("./models/users");
+const Post = require("./models/posts");
+const Comment = require("./models/comments");
+
+const allUsers = require("./data/users");
+const allPosts = require("./data/posts");
+const allComments = require("./data/comments");
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 

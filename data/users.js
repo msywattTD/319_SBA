@@ -52,4 +52,4 @@ const allUsers = [
     handle: "bella_clark",
   },
 ];
-module.exports = mongoose.model(allUsers);
+module.exports = allUsers;

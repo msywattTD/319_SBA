@@ -103,4 +103,4 @@ const allComments = [
   },
 ];
 
-module.exports = mongoose.model(allComments);
+module.exports = allComments;
