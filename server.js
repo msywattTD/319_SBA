@@ -12,6 +12,7 @@ db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to database."));
 //MIDDLEWARE
 app.use(express.json());
+
 //ROUTES
 const userRouter = require("./routes/users");
 app.use("/users", userRouter);
@@ -21,6 +22,19 @@ app.use("/users", userRouter);
 
 // const commentsRouter = require("./routes/comments");
 // app.use("/comments", commentRoutes);
+
+app.get("/seed", async (req, res) => {
+  await User.deleteMany({});
+  await User.create({ allUsers });
+
+  await Comment.deleteMany({});
+  await Comment.create({ allComments });
+
+  await Post.deleteMany({});
+  await Post.create({ allPosts });
+
+  res.json({ message: "Database seed data created." });
+});
 //ERRORS
 
 app.listen(PORT, () => {

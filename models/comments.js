@@ -1,3 +1,7 @@
-const commentsSchema = new mongoose.Schema({});
+const mongoose = require("mongoose");
 
-module.export = mongoose.model("Comments", commentsSchema);
+const commentsSchema = new mongoose.Schema({
+  textContent: { type: String },
+});
+
+module.exports = mongoose.model("Comment", commentsSchema);
