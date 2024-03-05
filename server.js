@@ -17,11 +17,11 @@ app.use(express.json());
 const userRouter = require("./routes/users");
 app.use("/users", userRouter);
 
-// const postsRouter = require("./routes/posts");
-// app.use("/posts", postRoutes);
+const postsRouter = require("./routes/posts");
+app.use("/posts", postsRouter);
 
 // const commentsRouter = require("./routes/comments");
-// app.use("/comments", commentRoutes);
+// app.use("/comments", commentRouter);
 
 app.get("/seed", async (req, res) => {
   await User.deleteMany({});
